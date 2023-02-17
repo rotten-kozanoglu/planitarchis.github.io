@@ -24,12 +24,15 @@ popupButton.addEventListener('click', () => {
   popupPanel.classList.toggle('active');
 });
 
+
 themeButton.addEventListener("click", () => {
-  if (themeButton.className == "fa-solid fa-sun"){
-    themeButton.className = "fa-solid fa-moon"
-    cssFile.href = 'dark-mode.css'
-  } else{
-    themeButton.className = "fa-solid fa-sun"
-    cssFile.href = 'style.css'
+  if (themeButton.classList.contains("light")) {
+    themeButton.innerHTML = "light_mode";
+    themeButton.classList.remove("light");
+    cssFile.href = "style.css";
+  } else {
+    themeButton.innerHTML = "dark_mode";
+    themeButton.classList.add("light");
+    cssFile.href = "dark-mode.css";
   }
-})
+});
