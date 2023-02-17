@@ -5,7 +5,7 @@ document.addEventListener('mousemove', e => {
   cursor.style.left = e.pageX + 'px';
 });
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('a');
 buttons.forEach(button => {
   button.addEventListener('mouseover', () => {
     cursor.classList.add('cursor-hover');
