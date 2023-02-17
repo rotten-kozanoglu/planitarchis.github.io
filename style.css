@@ -1,0 +1,132 @@
+body {
+  background-color: #212121;
+  color: #f1f1f1;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  margin-top: 140px;
+  text-align: center;
+}
+
+a {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+}
+
+.neon {
+  font-size: 15px;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 40px #ff00de, 0 0 55px #ff00de;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #212121;
+  font-size: 12px;
+}
+
+
+.rectangle {
+  width: 300px;
+  height: 400px;
+  background-color: #212121;
+  border-radius: 25px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.rectangle:hover {
+  transform: translate(-50%, -55%);
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.name {
+  margin-top: 140px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 25px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  margin: 0 5px;
+}
+
+.cursor {
+  position: fixed;
+  z-index: 999;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.cursor-hover {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+
+
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-1,
+.btn-2,
+.btn-3 {
+  border: none;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-top: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.btn-1:hover,
+.btn-2:hover,
+.btn-3:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
