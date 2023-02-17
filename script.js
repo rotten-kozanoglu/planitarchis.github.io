@@ -20,4 +20,6 @@ const popupPanel = document.querySelector('.popup-panel');
 
 popupButton.addEventListener('click', () => {
   popupPanel.classList.toggle('active');
+  console.log("ok")
 });
+
