@@ -4,39 +4,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script async src="script.js"></script>
+    <title>planitarchisdev</title>
   </head>
   <body>
     <div class="cursor"></div>
     <div class="rectangle">
-      <img class="profile-pic" src="files/profile-pic.png">
+      <img class="profile-pic" src="files/profile-pic.png" alt="Profile picture">
       <h1 class="name">planitarchisdev</h1>
       <div class="social-icons">
           <img class="icon" src="files/justhink.png" alt="Justhink">
           <img class="icon" src="files/hypestack.png" alt="hypestack">  
       </div>
       <div class="buttons-container">
-        <a class="btn-1" href="https://discord.gg/HnVZq9kjHm" target="_blank">hypestack</a>
-        <a class="btn-2" href="https://www.justhink.net" target="_blank">Justhink</a>
-        <a class="btn-3" href="https://www.github.com/asikLEMMY" target="_blank">GitHub</a>
+        <a class="btn-1" href="https://discord.gg/HnVZq9kjHm" target="_blank" rel="noopener">hypestack</a>
+        <a class="btn-2" href="https://www.justhink.net" target="_blank" rel="noopener">Justhink</a>
+        <a class="btn-3" href="https://www.github.com/asikLEMMY" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>  
-    <script>
-      const cursor = document.querySelector('.cursor');
-    
-      document.addEventListener('mousemove', e => {
-        cursor.style.top = e.pageY + 'px';
-        cursor.style.left = e.pageX + 'px';
-      });
-    
-      const buttons = document.querySelectorAll('a');
-      buttons.forEach(button => {
-        button.addEventListener('mouseover', () => {
-          cursor.classList.add('cursor-hover');
-        });
-        button.addEventListener('mouseout', () => {
-          cursor.classList.remove('cursor-hover');
-        });
-      });
-    </script>
   </body>
 </html>
