@@ -15,9 +15,6 @@ a {
   text-decoration: none;
 }
 
-
-
-
 .rectangle {
   width: 300px;
   height: 400px;
@@ -85,9 +82,6 @@ a {
   opacity: 1;
 }
 
-
-
-
 .buttons-container {
   display: flex;
   flex-direction: column;
@@ -116,3 +110,113 @@ a {
   transform: scale(1.1);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
+
+
+.popup-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.popup-circle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+}
+
+.popup-circle:hover {
+  transform: scale(1.1);
+}
+
+.popup-plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 3px;
+  background-color: #000000;
+}
+
+.popup-plus::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 20px;
+  background-color: #000000;
+}
+
+.popup-panel {
+  position: fixed;
+  bottom: -600px;
+  right: 20px;
+  z-index: 9999;
+  width: 300px;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  font-size: 20px;
+  transition: bottom 0.3s ease;
+}
+
+.popup-panel h2 {
+  font-size: 24px;
+  margin-top: 0;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.popup-panel label {
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.popup-panel input,
+.popup-panel textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.popup-panel input:focus,
+.popup-panel textarea:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.popup-panel button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-panel button:hover {
+  background-color: #3e8e41;
+}
+
+.popup-panel.active {
+  bottom: 100px;
+}
+

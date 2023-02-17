@@ -14,3 +14,10 @@ buttons.forEach(button => {
     cursor.classList.remove('cursor-hover');
   });
 });
+
+const popupButton = document.querySelector('.popup-button');
+const popupPanel = document.querySelector('.popup-panel');
+
+popupButton.addEventListener('click', () => {
+  popupPanel.classList.toggle('active');
+});
