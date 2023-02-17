@@ -15,21 +15,7 @@ a {
   text-decoration: none;
 }
 
-.neon {
-  font-size: 15px;
-  color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 40px #ff00de, 0 0 55px #ff00de;
-}
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  background-color: #212121;
-  font-size: 12px;
-}
 
 
 .rectangle {
