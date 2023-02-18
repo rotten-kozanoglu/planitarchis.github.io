@@ -270,7 +270,7 @@ a {
 
 #theme-button{
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   bottom: 92%;
   left: 96%; 
   color: #f3cc82;
