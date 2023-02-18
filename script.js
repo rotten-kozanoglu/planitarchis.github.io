@@ -17,13 +17,20 @@ buttons.forEach(button => {
   });
 });
 
-const popupButton = document.querySelector('.popup-button');
+
+const popupCircle= document.querySelector('.popup-circle');
 const popupPanel = document.querySelector('.popup-panel');
+const chatBox = document.querySelector('.chatbox');
+const chat = document.querySelector('.chat');
+const chatButton = document.querySelector('#chat-button');
 
 popupButton.addEventListener('click', () => {
   popupPanel.classList.toggle('active');
 });
 
+chatButton.addEventListener('click', () => {
+  chatBox.classList.toggle('active');
+});
 
 themeButton.addEventListener("click", () => {
   if (themeButton.classList.contains("light")) {
@@ -33,6 +40,11 @@ themeButton.addEventListener("click", () => {
   } else {
     themeButton.innerHTML = "dark_mode";
     themeButton.classList.add("light");
-    cssFile.href = "dark-mode.css";
+    cssFile.href = "light-mode.css";
   }
 });
+
+if (chat.childElementCount == 0){
+  chat.innerHTML = "NO MESSAGE"
+  chat.classList = "no-message"
+};
