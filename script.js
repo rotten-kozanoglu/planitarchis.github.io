@@ -24,7 +24,7 @@ const chatBox = document.querySelector('.chatbox');
 const chat = document.querySelector('.chat');
 const chatButton = document.querySelector('#chat-button');
 
-popupButton.addEventListener('click', () => {
+popupCircle.addEventListener('click', () => {
   popupPanel.classList.toggle('active');
 });
 
