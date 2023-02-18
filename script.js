@@ -47,5 +47,6 @@ themeButton.addEventListener("click", () => {
 if (chat.childElementCount == 0){
   chat.innerHTML = "NO MESSAGE"
   chat.classList = "no-message"
+  chatBox.style.overflow = "hidden"
 };
 
