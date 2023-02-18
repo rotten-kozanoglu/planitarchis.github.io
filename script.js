@@ -48,3 +48,39 @@ if (chat.childElementCount == 0){
   chat.innerHTML = "NO MESSAGE"
   chat.classList = "no-message"
 };
+
+const messages = [];
+
+function sendMessage() {
+  const messageInput = document.getElementById("message-input");
+  const message = messageInput.value;
+  if (message) {
+    messages.push(message);
+    messageInput.value = "";
+    printMessages();
+  }
+}
+
+function printMessages() {
+  const chatDiv = document.querySelector(".chat");
+  chatDiv.innerHTML = "";
+  if (messages.length === 0) {
+    return;
+  }
+  let i = 1;
+  for (const message of messages) {
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message-style");
+    messageDiv.setAttribute("id", "person" + i);
+    messageDiv.textContent = message;
+    chatDiv.appendChild(messageDiv);
+    i = i % 2 + 1;
+  }
+}
+
+
+
+
+
+const sendButton = document.getElementById("send-button");
+sendButton.addEventListener("click", sendMessage);
