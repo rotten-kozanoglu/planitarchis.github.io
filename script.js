@@ -1,6 +1,6 @@
 var form = document.getElementById("texter");
 
-const API_KEY = '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';
+const API_KEY = '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';
 async function chatBotMessage(message) {
     const response = await fetch('https://api.openai.com/v1/engines/text-davinci-003/completions', {
       method: 'POST',
