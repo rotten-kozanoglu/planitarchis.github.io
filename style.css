@@ -1,0 +1,135 @@
+body {
+    background: rgb(73, 73, 73);
+}
+
+.hint {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-style: italic;
+    z-index: 9999;
+    display: block; /* başlangıçta gizli */
+}
+  
+
+.chatbox {
+    max-width: 800px;
+    margin: 10px auto;
+    background-color: #4a4949;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative;
+    top: -30px;
+    bottom: 0;
+    left: -200px;
+    right: 0;
+}
+
+
+.message-box {
+    flex: 0.3;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: white;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.message-box-body {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.message-box-footer {
+    display: flex;
+    margin-top: 10px;
+}
+
+.message-input {
+    position: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    bottom: 10px;
+    right: 95px;
+    width: 1300px;
+    height: 25px;
+    background: #4a4949;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+    color: white;
+    font-size: 15px;
+    padding: 5px 10px;
+    outline: none;
+    overflow: auto;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+    flex-direction: row-reverse;
+}
+
+
+.message-sender {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+.message-sender::before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-image: var(--message-sender-before-background-image);
+    background-size: cover;
+}
+
+
+.message-text {
+    background-color: #414141;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 0 10px;
+}
+
+.message:last-of-type {
+    animation: show-message 0.5s;
+}
+  
+
+@keyframes show-message {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#scroller * {
+    overflow-anchor: none;
+}
+
+#anchor {
+    overflow-anchor: auto;
+    height: 1px;
+}
