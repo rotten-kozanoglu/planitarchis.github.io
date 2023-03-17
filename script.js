@@ -1,12 +1,31 @@
 var form = document.getElementById("texter");
 
-const API_KEY = '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';
+const API_KEY = 'vn-iEvMfZgGGNQVeAc1VRhoW3EoenIMUUZ22Xu1Ml8Acau1J6iC';
+
+function decryptCeaser(text, shift) {
+  var result = "";
+  for (var i = 0; i < text.length; i++) {
+    var c = text.charCodeAt(i);
+    if (c >= 65 && c <= 90) {  // Büyük harfler için
+      result += String.fromCharCode(((c - 65 - shift + 26) % 26) + 65);
+    }
+    else if (c >= 97 && c <= 122) {  // Küçük harfler için
+      result += String.fromCharCode(((c - 97 - shift + 26) % 26) + 97);
+    }
+    else {  // Diğer karakterler için
+      result += text.charAt(i);
+    }
+  }
+  return result;
+}
+
+
 async function chatBotMessage(message) {
     const response = await fetch('https://api.openai.com/v1/engines/text-davinci-003/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`
+        'Authorization': `Bearer ${decryptCeaser(API_KEY, 3)}`
       },
       body: JSON.stringify({
         prompt: message,
