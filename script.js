@@ -77,13 +77,17 @@ async function chatBotMessage(message) {
     const data = await response.json();
     return data.choices[0].text;
 }
+var isChatBotResponding = false;
 
 function sendMessage() {
   var userInput = document.getElementById("texter").innerText.trim();
   var chatbox = document.getElementById("chatbox_messages");
+  if (isChatBotResponding) {
+    return;
+  }
+
   var newMessage = document.createElement("div");
   newMessage.classList.add("message");
-
 
   var newMessageContent = document.createElement("div");
   newMessageContent.classList.add("message-content");
@@ -96,19 +100,51 @@ function sendMessage() {
 
   var messageText = document.createElement("div");
   messageText.classList.add("message-text");
-  messageText.innerText = userInput;
+
+  // Check if the user input is a link to an image
+  if (/\.(jpeg|jpg|gif|png)$/.test(userInput)) {
+    var image = document.createElement("img");
+    image.src = userInput;
+    image.classList.add("message-image");
+    messageText.appendChild(image);
+  } else {
+    messageText.innerText = userInput;
+  }
 
   newMessageContent.appendChild(messageSender);
   newMessageContent.appendChild(messageText);
   newMessage.appendChild(newMessageContent);
   chatbox.appendChild(newMessage);
-
   document.getElementById("texter").innerText = "";
+
+  isChatBotResponding = true;
+
+  var botMessage = document.createElement("div");
+  botMessage.classList.add("message");
+
+  var botMessageContent = document.createElement("div");
+  botMessageContent.classList.add("message-content", "botiswriting");
+
+  var botMessageSender = document.createElement("div");
+  botMessageSender.classList.add("message-sender");
+  botMessageSender.innerText = "ChatopenAI";
+  var messageSenderBefore = window.getComputedStyle(botMessageSender, ':before');
+  botMessageSender.style.setProperty('--message-sender-before-background-image', 'url(files/chatopenai.jpg)');
+
+  var botMessageText = document.createElement("div");
+  botMessageText.classList.add("message-text");
+  botMessageText.innerText = "ChatopenAI yazıyor...";
+
+  botMessageContent.appendChild(botMessageSender);
+  botMessageContent.appendChild(botMessageText);
+  botMessage.appendChild(botMessageContent);
+  chatbox.appendChild(botMessage);
+
+  document.getElementById("texter").classList.add("botiswriting");
 
   chatBotMessage(userInput).then(function(response) {
     var newBotMessage = document.createElement("div");
     newBotMessage.classList.add("message");
-
 
     var newBotMessageContent = document.createElement("div");
     newBotMessageContent.classList.add("message-content");
@@ -127,8 +163,14 @@ function sendMessage() {
     newBotMessageContent.appendChild(botMessageText);
     newBotMessage.appendChild(newBotMessageContent);
     chatbox.appendChild(newBotMessage);
-    });
+
+    isChatBotResponding = false;
+    botMessage.remove();
+    document.getElementById("texter").classList.remove("botiswriting");
+    document.getElementById("texter").focus();
+  });
 }
+
 
 
 form.addEventListener("keydown", function(event) {
