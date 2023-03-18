@@ -2,6 +2,102 @@ body {
     background: rgb(73, 73, 73);
 }
 
+.profile-button i.fa-user {
+    color: #fff; /* set the color to white */
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+#update-profile {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4a4949;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+  
+#update-profile:hover {
+    background-color: #828282;
+}
+  
+
+.profile-wrapper {
+    width: 30%;
+    padding: 20px;
+    border: 5px solid #4a4949;
+    display: none;
+    background-color: #4a4949;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 100%; /* initial position */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top 0.3s ease-in-out; /* add transition */
+    z-index: 9999;
+}
+  
+.profile-wrapper.open {
+    top: 50%;
+}
+  
+.profile-wrapper.close {
+    top: 100%;
+}
+
+.profile-wrapper h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.profile-section {
+    margin-bottom: 10px;
+}
+
+.profile-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+.profile-section input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.profile-section input[type="file"] {
+    border: none;
+    font-size: 14px;
+    padding: 5px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  
+  .profile-section input[type="file"]:hover {
+    background-color: #ddd;
+  }
+  
+  .profile-section input[type="file"]:focus {
+    outline: none;
+  }
+
 .hint {
     position: fixed;
     top: 50%;
@@ -18,7 +114,7 @@ body {
   
 
 .chatbox {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 10px auto;
     background-color: #4a4949;
     display: flex;

@@ -20,6 +20,44 @@ function decryptCeaser(text, shift) {
 }
 
 
+function openSettings() {
+  var settings = document.querySelector('.profile-wrapper');
+  if (settings.classList.contains('open')) {
+    settings.classList.remove('open');
+    settings.classList.add('close');
+    setTimeout(function() {
+      settings.style.display = 'none';
+      settings.classList.remove('close');
+    }, 300);
+  } else {
+    settings.style.display = 'block';
+    setTimeout(function() {
+      settings.classList.add('open');
+    }, 0);
+  }
+}
+
+const profileSettings = [
+  {username: 'Bu sensin, muhtesemsin.'},
+  {avatar: 'files/pfp.jpg'}
+]
+
+profileSettings.username = 'Bu sensin, muhtesemsin.';
+profileSettings.avatar = 'files/pfp.jpg';
+
+function updateProfile() {
+  var username = document.getElementById("username").value;
+  var avatar = document.getElementById("avatar").value;
+  profileSettings.username = username;
+  if (avatar.startsWith("http") || avatar.startsWith("https")) { 
+    profileSettings.avatar = avatar;
+  } else {
+    alert("Şu anlık, profil fotoğrafınızı sadece link üzerinden değiştirebilirsiniz.");
+  }
+}
+
+
+
 async function chatBotMessage(message) {
     const response = await fetch('https://api.openai.com/v1/engines/text-davinci-003/completions', {
       method: 'POST',
@@ -52,9 +90,9 @@ function sendMessage() {
 
   var messageSender = document.createElement("div");
   messageSender.classList.add("message-sender");
-  messageSender.innerText = "Bu sensin, muhtesemsin.";
+  messageSender.innerText = profileSettings.username;
   var messageSenderBefore = window.getComputedStyle(messageSender, ':before');
-  messageSender.style.setProperty('--message-sender-before-background-image', 'url(files/pfp.jpg)');
+  messageSender.style.setProperty('--message-sender-before-background-image', 'url(' + profileSettings.avatar + ')');
 
   var messageText = document.createElement("div");
   messageText.classList.add("message-text");
