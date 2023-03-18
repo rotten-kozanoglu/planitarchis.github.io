@@ -2,6 +2,22 @@ body {
     background: rgb(73, 73, 73);
 }
 
+
+.botiswriting {
+    display: block;
+    font-style: italic;
+    color: gray;
+}
+  
+.message-input[contenteditable="true"]:not(.botiswriting) {
+    pointer-events: auto;
+}
+  
+.message-input[contenteditable="true"].botiswriting {
+    pointer-events: none;
+}
+  
+
 .profile-button i.fa-user {
     color: #fff; /* set the color to white */
     position: fixed;
@@ -114,7 +130,7 @@ body {
   
 
 .chatbox {
-    max-width: 1000px;
+    max-width: 100%;
     margin: 10px auto;
     background-color: #4a4949;
     display: flex;
@@ -123,7 +139,7 @@ body {
     position: relative;
     top: -30px;
     bottom: 0;
-    left: -200px;
+    left: 0px;
     right: 0;
 }
 
