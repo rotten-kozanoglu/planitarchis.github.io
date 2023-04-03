@@ -38,11 +38,11 @@ function openSettings() {
 }
 
 const profileSettings = [
-  {username: 'This is you, you're magnificent.'},
+  {username: "This is you, you're magnificent."},
   {avatar: 'files/pfp.jpg'}
 ]
 
-profileSettings.username = 'This is you, you're magnificent.';
+profileSettings.username = "This is you, you're magnificent.";
 profileSettings.avatar = 'files/pfp.jpg';
 
 function updateProfile() {
@@ -133,7 +133,7 @@ function sendMessage() {
 
   var botMessageText = document.createElement("div");
   botMessageText.classList.add("message-text");
-  botMessageText.innerText = "ChatopenAI typing...";
+  botMessageText.innerText = "ChatopenAI is typing...";
 
   botMessageContent.appendChild(botMessageSender);
   botMessageContent.appendChild(botMessageText);
