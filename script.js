@@ -59,19 +59,14 @@ function updateProfile() {
 
 
 async function chatBotMessage(message) {
-    const response = await fetch('https://api.openai.com/v1/engines/text-davinci-003/completions', {
-      method: 'POST',
+    const response = await fetch('https://chatgpt-api.shn.hk/v1/s', {
+      model: 'gpt-3.5-turbo',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${decryptCeaser(API_KEY, 3)}`
       },
-      body: JSON.stringify({
-        prompt: message,
-        temperature: 0.7,
-        max_tokens: 2000,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0
+      messages: JSON.stringify({
+        role: 'user',
+        content: message
       })
     });
     const data = await response.json();
