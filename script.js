@@ -38,11 +38,11 @@ function openSettings() {
 }
 
 const profileSettings = [
-  {username: 'Bu sensin, muhtesemsin.'},
+  {username: 'This is you, you're magnificent.'},
   {avatar: 'files/pfp.jpg'}
 ]
 
-profileSettings.username = 'Bu sensin, muhtesemsin.';
+profileSettings.username = 'This is you, you're magnificent.';
 profileSettings.avatar = 'files/pfp.jpg';
 
 function updateProfile() {
@@ -52,7 +52,7 @@ function updateProfile() {
   if (avatar.startsWith("http") || avatar.startsWith("https")) { 
     profileSettings.avatar = avatar;
   } else {
-    alert("Şu anlık, profil fotoğrafınızı sadece link üzerinden değiştirebilirsiniz.");
+    alert("For now you can change your profile photo by URL.");
   }
 }
 
@@ -133,7 +133,7 @@ function sendMessage() {
 
   var botMessageText = document.createElement("div");
   botMessageText.classList.add("message-text");
-  botMessageText.innerText = "ChatopenAI yazıyor...";
+  botMessageText.innerText = "ChatopenAI typing...";
 
   botMessageContent.appendChild(botMessageSender);
   botMessageContent.appendChild(botMessageText);
