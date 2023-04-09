@@ -59,7 +59,7 @@ function updateProfile() {
 
 
 async function chatBotMessage(message) {
-  const response = await fetch('https://api.openai.com/v1/engines/text-davinci0003/completions', {
+    const response = await fetch('https://api.openai.com/v1/engines/text-davinci-003/completions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
