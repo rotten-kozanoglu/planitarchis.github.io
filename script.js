@@ -1,6 +1,6 @@
 var form = document.getElementById("texter");
 
-const API_KEY = 'vn-1Q4HaFYt3lBCQ8s9dSmbW3EoenIM0hQADGV0SfnDd9h1MSpD';
+const API_KEY = 'vn-ZHoBlXkELDksR8IcAYB7W3EoenIM5mME88oTvih8hY3Ld2lB';
 
 function decryptCeaser(text, shift) {
   var result = "";
@@ -60,20 +60,22 @@ function updateProfile() {
 
 async function chatBotMessage(message) {
     const response = await fetch('https://api.openai.com/v1/engines/text-davinci-003/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${decryptCeaser(API_KEY, 3)}`
-    },
-    body: JSON.stringify({
-      prompt: message,
-      max_tokens: 2000,
-      n: 1,
-      stop: ['\n']
-    })
-  });
-  const data = await response.json();
-  return data.choices[0].text;
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${decryptCeaser(API_KEY, 3)}`
+      },
+      body: JSON.stringify({
+        prompt: message,
+        temperature: 0.7,
+        max_tokens: 2000,
+        top_p: 1,
+        frequency_penalty: 0,
+        presence_penalty: 0
+      })
+    });
+    const data = await response.json();
+    return data.choices[0].text;
 }
 
 var isChatBotResponding = false;
