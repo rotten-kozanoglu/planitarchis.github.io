@@ -1,53 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
-    name="description"
-    content="A chatbot who is enchanced with ChatGPT-3.5!"
-  />
+      name="description"
+      content="A chatbot who is enchanced with ChatGPT-3.5!"
+    />
     <title>Chatbot</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script async src="script.js"></script>
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-  />
-    <link rel="icon" type="image/x-icon" href="files/chatbot.ico">
-</head>
-<body>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="files/chatbot.ico" />
+  </head>
+  <body>
     <div class="profile-button" onclick="openSettings()">
-        <i class="fa fa-user"></i>
+      <i class="fa fa-user"></i>
     </div>
     <div class="profile-wrapper">
-        <h2>Profile Settings</h2>
-        <div class="profile-section">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-        </div>
-        <div class="profile-section">
-            <label for="avatar">Avatar:</label>
-            <input type="text" id="avatar" name="avatar">
-        </div>
-        <button id="update-profile" onclick="updateProfile()">
-            <i class="fa fa-save"></i>
-            Update
-        </button>
+      <h2>Profile Settings</h2>
+      <div class="profile-section">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" />
+      </div>
+      <div class="profile-section">
+        <label for="avatar">Avatar:</label>
+        <input type="text" id="avatar" name="avatar" />
+      </div>
+      <button id="update-profile" onclick="updateProfile()">
+        <i class="fa fa-save"></i>
+        Update
+      </button>
     </div>
     <div class="hint">Write something you want to the input.</div>
     <div id="scroller">
-        <div class="chatbox">
-            <div class="message-box">
-                <div class="message-box-body" id="chatbox_messages">
-                    <div class="message-box-footer">
-                        <div class="message-input" contenteditable="true" placeholder="yaz ulan buraya..." id="texter"></div>
-                    </div>
-                </div>
+      <div class="chatbox">
+        <div class="message-box">
+          <div class="message-box-body" id="chatbox_messages">
+            <div class="message-box-footer">
+              <div
+                class="message-input"
+                contenteditable="true"
+                placeholder="yaz ulan buraya..."
+                id="texter"
+              ></div>
             </div>
+          </div>
         </div>
-        <div id="anchor"></div>
+      </div>
+      <div id="anchor"></div>
     </div>
-</body>
+  </body>
 </html>
