@@ -104,7 +104,6 @@ function sendMessage() {
   var messageText = document.createElement("div");
   messageText.classList.add("message-text");
 
-  // Check if the user input is a link to an image
   if (/\.(jpeg|jpg|gif|png)$/.test(userInput)) {
     var image = document.createElement("img");
     image.src = userInput;
