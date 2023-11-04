@@ -1,4 +1,4 @@
-import { OpenAI } from "./src/openai/OpenAI.js";
+import { OpenAI } from "OpenAI.js"
 
 var form = document.getElementById("texter");
 
