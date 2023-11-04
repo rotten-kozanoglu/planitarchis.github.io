@@ -1,6 +1,6 @@
 var form = document.getElementById("texter");
 
-const API_KEY = 'vn-ZHoBlXkELDksR8IcAYB7W3EoenIM5mME88oTvih8hY3Ld2lB';
+const API_KEY = '4qwAAX37iKAyPiU5VEmFA3IsirMQDhT8C8aiC4Yyv1GrLZEG';
 
 function decryptCeaser(text, shift) {
   var result = "";
@@ -63,7 +63,7 @@ async function chatBotMessage(message) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${decryptCeaser(API_KEY, 3)}`
+        'Authorization': `Bearer ${decryptCeaser(API_KEY, 7)}`
       },
       body: JSON.stringify({
         prompt: message,
