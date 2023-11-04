@@ -1,28 +1,8 @@
-import { OpenAI } from "OpenAI.js"
+import { OpenAI } from "./OpenAI.js"
 
 var form = document.getElementById("texter");
 
-const API_KEY = "4qwAAX37iKAyPiU5VEmFA3IsirMQDhT8C8aiC4Yyv1GrLZEG";
-
-function decryptCeaser(text, shift) {
-  var result = "";
-  for (var i = 0; i < text.length; i++) {
-    var c = text.charCodeAt(i);
-    if (c >= 65 && c <= 90) {
-      // Büyük harfler için
-      result += String.fromCharCode(((c - 65 - shift + 26) % 26) + 65);
-    } else if (c >= 97 && c <= 122) {
-      // Küçük harfler için
-      result += String.fromCharCode(((c - 97 - shift + 26) % 26) + 97);
-    } else {
-      // Diğer karakterler için
-      result += text.charAt(i);
-    }
-  }
-  return result;
-}
-
-const openAI = new OpenAI(decryptCeaser(API_KEY, 7));
+const openAI = new OpenAI(OpenAI.decryptedAPI_KEY);
 
 function openSettings() {
   var settings = document.querySelector(".profile-wrapper");
